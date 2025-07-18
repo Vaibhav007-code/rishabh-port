@@ -13,7 +13,7 @@ export function HeroSection() {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-hero" />
-      
+
       {/* Floating Orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -23,8 +23,13 @@ export function HeroSection() {
           {/* Main Hero Card */}
           <div className="glass glass-hover rounded-2xl p-8 md:p-12 mb-8">
             <div className="flex items-center justify-center mb-6">
-              <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center">
-                <Play className="w-8 h-8 text-white" />
+              <div className="relative group">
+                <img 
+                  src="https://i.ibb.co/HDb56k3t/rishub-pro.jpg" 
+                  alt="Rishabh Srivastav"
+                  className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-primary/30 shadow-2xl ring-2 ring-primary/20 transition-all duration-500 hover:scale-110 hover:shadow-3xl hover:border-primary/50 hover:ring-primary/30 animate-float"
+                />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </div>
             

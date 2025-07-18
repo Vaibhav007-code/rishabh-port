@@ -11,7 +11,8 @@ const projects = [
     link: "https://youtu.be/rNIPlbH_tcU?si=U572fIVI1DML6VEX",
     platform: "YouTube",
     icon: <Award className="w-5 h-5" />,
-    highlight: true
+    highlight: true,
+    thumbnail: "https://i.ibb.co/LzPS2Z8D/iit-bombay-img.jpg"
   },
   {
     title: "PLAYnWIN Commercial Ad",
@@ -21,7 +22,8 @@ const projects = [
     link: "https://www.instagram.com/reel/DIZIAg6zk5_/?igsh=MTRnYm1rM2ltZzAzNQ==",
     platform: "Instagram",
     icon: <Briefcase className="w-5 h-5" />,
-    highlight: true
+    highlight: true,
+    thumbnail: "https://i.ibb.co/zjHhhCS/add-shoot.png"
   },
   {
     title: "PLAYnWIN Instagram Ad",
@@ -31,7 +33,8 @@ const projects = [
     link: "https://www.instagram.com/reel/DIZIAg6zk5_/?igsh=MTRnYm1rM2ltZzAzNQ==",
     platform: "Instagram",
     icon: <Briefcase className="w-5 h-5" />,
-    highlight: false
+    highlight: false,
+    thumbnail: "https://i.ibb.co/zjHhhCS/add-shoot.png" // Same thumbnail as PLAYnWIN Commercial Ad
   }
 ];
 
@@ -61,42 +64,51 @@ export function PortfolioSection() {
               }`}
             >
               <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-2 text-primary">
-                        {project.icon}
-                        <span className="text-sm font-medium">{project.type}</span>
-                      </div>
-                      <span className="text-sm font-bold text-primary">{project.value}</span>
-                    </div>
+                {/* Thumbnail Image */}
+                <div className="mb-6 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
+                  <img 
+                    src={project.thumbnail} 
+                    alt={`${project.title} thumbnail`} 
+                    className="w-full h-48 object-contain transition-transform group-hover:scale-105"
+                  />
+                </div>
 
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {project.description}
-                    </p>
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-2 text-primary">
+                    {project.icon}
+                    <span className="text-sm font-medium">{project.type}</span>
+                  </div>
+                  <span className="text-sm font-bold text-primary">{project.value}</span>
+                </div>
 
-                    <div className="flex items-center justify-between">
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="glass border-primary/30 hover:border-primary/50 group/btn"
-                        onClick={() => window.open(project.link, '_blank')}
-                      >
-                        <Play className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                        Watch Now
-                      </Button>
-                      
-                      <Button 
-                        variant="ghost" 
-                        size="sm"
-                        className="text-primary hover:text-primary/80"
-                        onClick={() => window.open(project.link, '_blank')}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </Button>
-                    </div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="glass border-primary/30 hover:border-primary/50 group/btn"
+                    onClick={() => window.open(project.link, '_blank')}
+                  >
+                    <Play className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                    Watch Now
+                  </Button>
+                  
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    className="text-primary hover:text-primary/80"
+                    onClick={() => window.open(project.link, '_blank')}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
